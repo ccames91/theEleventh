@@ -7,6 +7,15 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/Develop/public/index.html');
+  });
+
+  app.get('/notes', (req, res) => {
+    res.sendFile(__dirname + '/Develop/public/notes.html');
+  });
+  
+
+app.get('/', (req, res) => {
     res.send('Welcome to the Note Taker application'); 
   });
   
