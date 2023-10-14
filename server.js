@@ -4,9 +4,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Note Taker application'); 
+  });
+  
 app.get('/api/example', (req, res) => {
   res.json({ message: 'gguguyg' });
 });
